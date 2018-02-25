@@ -71,7 +71,7 @@ export default () => (
         </div>
 
         <div className="uk-section uk-section-default uk-padding-large">
-            <div className="uk-child-width-1-3@s uk-grid-match" uk-grid="" uk-scrollspy="target: > div; cls: uk-animation-scale-up; delay: 500">
+            <div className="uk-child-width-1-3@s uk-grid-match" uk-grid="" uk-scrollspy="target: > div; repeat:true; cls: uk-animation-scale-up; delay: 500">
                 <div>
                     <div className="uk-card uk-card-default uk-card-hover uk-card-body">
                         <h3 className="uk-card-title" >Efficiency</h3>

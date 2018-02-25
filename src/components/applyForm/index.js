@@ -282,7 +282,7 @@ class ApplyForm extends React.Component {
                                             <div className="uk-margin-small">
                                                 <input alt={val.name} className="uk-input uk-form-width-large"
                                                        id={val.name} label="" required="" name={val.name}
-                                                       placeholder={val.placeholder} type={val.type} title={val.name}/>
+                                                       placeholder={val.placeholder} value="hi@hi.com" type={val.type} title={val.name}/>
                                             </div>
                                         </div>
                                     }
