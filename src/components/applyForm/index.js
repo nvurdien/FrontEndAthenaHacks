@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './style.css';
 
@@ -74,7 +73,7 @@ class ApplyForm extends React.Component {
     handleSubmit(event) {  // handles form submit without any jquery
         event.preventDefault();           // we are submitting via xhr below
         let data = this.getFormData(event);         // get the values submitted in the form
-
+        let submit = new FormData();
         /* OPTION: Remove this comment to enable SPAM prevention, see README.md
         if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
           return false;
@@ -86,6 +85,7 @@ class ApplyForm extends React.Component {
         document.getElementById("email").classList.remove("uk-form-danger");
         document.getElementById("username").classList.remove("uk-form-danger");
         document.getElementById("password").classList.remove("uk-form-danger");
+        document.getElementById("background_check_text").classList.remove("uk-form-danger");
 
         document.getElementById("email").classList.remove("uk-form-success");
         document.getElementById("username").classList.remove("uk-form-success");
@@ -112,6 +112,7 @@ class ApplyForm extends React.Component {
             }
             if(!data.background_check){
                 if(prev) innertext += ',';
+                document.getElementById("background_check_text").classList.add("uk-form-danger");
                 innertext += ' Background Check document'
             }
             // language=HTML
@@ -123,41 +124,37 @@ class ApplyForm extends React.Component {
             document.getElementById("email").classList.add("uk-form-danger");
             return false;
         } else {
-            let url = "";  // sign in
+            submit.append('file', this.uploadInput.files[0]);
+            submit.append('username', data.username);
+            submit.append('password', data.password);
+            submit.append('email', data.email);
             document.getElementById("email").classList.add("uk-form-success");
             document.getElementById("username").classList.add("uk-form-success");
             document.getElementById("password").classList.add("uk-form-success");
             document.getElementById("submit").innerText = "Sending";
             document.getElementById("submit").setAttribute("disabled", "");
+            let url = "http://localhost:8000/background";  // sign in
+            fetch(url, {
+                method: 'POST',
+                body: submit,
+            }).then((response) => {
+                console.log(response);
+            });
+            document.getElementById('message_status').innerHTML = '<div id="thankyou_message" class="uk-alert-success" uk-alert=""><p>Message Sent! Thank you!</p></div>';
+            document.getElementById("email").classList.remove("uk-form-success");
+            document.getElementById("username").classList.remove("uk-form-success");
+            document.getElementById("password").classList.remove("uk-form-success");
+            document.getElementById("submit").innerText = "Submit";
+            document.getElementById("submit").removeAttribute("disabled");
 
-            let xhr = new XMLHttpRequest();
-            xhr.open('POST', url);
-            // xhr.withCredentials = true;
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onreadystatechange = function() {
-                console.log( xhr.status, xhr.statusText );
-                console.log(xhr.responseText);
-                document.getElementById('message_status').innerHTML = '<div id="thankyou_message" class="uk-alert-success" uk-alert=""><p>Message Sent! Thank you!</p></div>';
-                document.getElementById("email").classList.remove("uk-form-success");
-                document.getElementById("username").classList.remove("uk-form-success");
-                document.getElementById("password").classList.remove("uk-form-success");
-                document.getElementById("submit").innerText = "Submit";
-                document.getElementById("submit").removeAttribute("disabled");
 
+            //if it doesnt work
+            document.getElementById("email").value = "";
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("background_check").value = "";
+            document.getElementById("background_check_text").value = "";
 
-                //if it doesnt work
-                document.getElementById("email").value = "";
-                document.getElementById("username").value = "";
-                document.getElementById("password").value = "";
-                document.getElementById("background_check").value = "";
-                document.getElementById("background_check_text").value = "";
-
-            };
-            // url encode form data for sending as post data
-            let encoded = Object.keys(data).map(function(k) {
-                return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-            }).join('&');
-            xhr.send(encoded);
         }
     }
 
@@ -185,7 +182,7 @@ class ApplyForm extends React.Component {
                         {/*document*/}
                         <div className="uk-margin">
                             <div uk-form-custom="target: true">
-                                <input name="background_check" id="background_check" title="background_check" type="file"/>
+                                <input ref={(ref) => { this.uploadInput = ref; }} name="background_check" id="background_check" title="background_check" type="file"/>
                                     <input id="background_check_text" className="uk-input uk-form-width-medium" type="text" placeholder="Select file*" disabled="" /><button className="uk-button uk-button-default" type="button" tabIndex="-1">Select</button>
                             </div>
                         </div>
