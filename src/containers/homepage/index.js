@@ -46,7 +46,7 @@ export default () => (
                     <div className="uk-child-width-1-1@s uk-text-center uk-grid-collapse uk-article" uk-grid="">
                         <div>
                             <p>
-                                <h1 className="uk-article-title uk-light" style={{textShadow: "4px 5px 2px #000000"}}>Something</h1>
+                                <h1 className="uk-article-title uk-light" style={{textShadow: "4px 5px 2px #000000"}}>B-Gun</h1>
 
                             </p>
 
@@ -54,7 +54,7 @@ export default () => (
                         </div>
 
                         <div style={lineHeightChange}>
-                            <h4 className="uk-article-lead" style={colorToWhite}><span>Learn more</span></h4>
+                            {/*<h4 className="uk-article-lead" style={colorToWhite}><span>Learn more</span></h4>*/}
 
                             <p> <Link className="btn btn-1 btn-1a" to="/apply">Apply Now!</Link> </p>
 

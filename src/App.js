@@ -8,6 +8,7 @@ import Qualification from './containers/qualification'
 import './uikit.min.css';
 import {Header} from "./components/header";
 import {OffCanvasHeader} from "./components/offCanvasHeader";
+import SignUpForm from "./containers/signUpForm";
 
 const App = () => (
     <Router>
@@ -19,6 +20,7 @@ const App = () => (
             <Route exact={true} path={"/contact"} component={Contact} />
             <Route exact={true} path={"/qualification"} component={Qualification} />
             <Route exact={true} path={"/process"} component={Process} />
+            <Route exact={true} path={"/signup"} component={SignUpForm} />
             <Header/>
             <OffCanvasHeader/>
         </div>
