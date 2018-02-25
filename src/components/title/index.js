@@ -14,7 +14,7 @@ export const Title = ({title, image, subtext}) => {
     };
 
     return <div>
-        <div className="uk-background-cover uk-overflow-hidden uk-light uk-flex uk-background-blend-multiply uk-background-primary uk-height-large uk-flex-center uk-flex-middle" style={backgroundImageStyle}>
+        <div className="uk-background-cover uk-overflow-hidden uk-light uk-flex uk-background-blend-multiply uk-background-secondary uk-height-large uk-flex-center uk-flex-middle" style={backgroundImageStyle}>
         <div className="uk-width-1-2@m uk-text-center">
             <div className="uk-overlay uk-flex-center">
                 <br />

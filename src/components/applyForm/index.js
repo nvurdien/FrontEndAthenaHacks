@@ -160,7 +160,7 @@ class ApplyForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="uk-margin-auto uk-margin-auto-vertical uk-width-1-2@s">
                 <div id="message_status">
 
                 </div>
@@ -171,13 +171,13 @@ class ApplyForm extends React.Component {
                         {/*<legend className="uk-legend"></legend>*/}
                         {/*<p>You may use the form or email us at </p>*/}
                         <div className="uk-margin">
-                            <input alt="username" className="uk-input" id="username" label="" required="" name="username" placeholder="Username*" title="username"/>
+                            <input alt="username" className="uk-input uk-form-width-large" id="username" label="" required="" name="username" placeholder="Username*" title="username"/>
                         </div>
                         <div className="uk-margin">
-                            <input alt="email" className="uk-input" id="email" label="" required="" name="email" placeholder="Your Email*" title="email" type="email"/>
+                            <input alt="email" className="uk-input uk-form-width-large" id="email" label="" required="" name="email" placeholder="Your Email*" title="email" type="email"/>
                         </div>
                         <div className="uk-margin">
-                            <input alt="password" className="uk-input" id="password" label="" required="" name="password" placeholder="Password*" title="password" type="password"/>
+                            <input alt="password" className="uk-input uk-form-width-large" id="password" label="" required="" name="password" placeholder="Password*" title="password" type="password"/>
                         </div>
                         {/*document*/}
                         <div className="uk-margin">
@@ -186,7 +186,7 @@ class ApplyForm extends React.Component {
                                     <input id="background_check_text" className="uk-input uk-form-width-medium" type="text" placeholder="Select file*" disabled="" /><button className="uk-button uk-button-default" type="button" tabIndex="-1">Select</button>
                             </div>
                         </div>
-                        <div className="uk-margin uk-text-center" uk-margin="">
+                        <div className="uk-margin" uk-margin="">
                             <button type="submit" value="Submit" id="submit" className="uk-button uk-button-default uk-first-column">Submit</button>
                         </div>
                     </fieldset>
