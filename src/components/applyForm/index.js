@@ -5,6 +5,261 @@ class ApplyForm extends React.Component {
     constructor() {
         super();
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+            questions: [
+                {
+                    name: "username",
+                    type: "text",
+                    label: "Username",
+                    placeholder: "Username*"
+                },
+                {
+                    name: "email",
+                    type: "email",
+                    label: "Email",
+                    placeholder: "Email*"
+                },
+                {
+                    name: "password",
+                    type: "password",
+                    label: "Password",
+                    placeholder: "Password*"
+                },
+                {
+                    name: "lastName",
+                    type: "text",
+                    label: "Last Name",
+                    placeholder: "Last Name*"
+                },
+                {
+                    name: "firstName",
+                    type: "text",
+                    label: "First Name",
+                    placeholder: "First Name*"
+                },
+                {
+                    name: "middleName",
+                    type: "text",
+                    label: "Middle Name",
+                    placeholder: "Middle Name*"
+                },
+                {
+                    name: "street",
+                    type: "text",
+                    label: "Number and Street Address",
+                    placeholder: "Number and Street Address*"
+                },
+                {
+                    name: "city",
+                    type: "text",
+                    label: "City",
+                    placeholder: "City*"
+                },
+                {
+                    name: "county",
+                    type: "text",
+                    label: "County",
+                    placeholder: "County*"
+                },
+                {
+                    name: "birth",
+                    type: "text",
+                    label: "Place of birth (County, State OR Foreign Country",
+                    placeholder: "Place of birth*"
+                },
+                {
+                    name: "height_feet",
+                    type: "text",
+                    label: "Height in feet",
+                    placeholder: "Height (feet)*"
+                },
+                {
+                    name: "height_inches",
+                    type: "text",
+                    label: "Height in inches",
+                    placeholder: "Height (inches)*"
+                },
+                {
+                    name: "weight",
+                    type: "text",
+                    label: "Weight in pounds",
+                    placeholder: "Weight (lb)*"
+                },
+                {
+                    name: "sex",
+                    type: "choice",
+                    label: "Sex",
+                    choices: [
+                        "Female", "Male"
+                    ]
+                },
+                {
+                    name: "birthday_month",
+                    type: "text",
+                    label: "Birthday Month",
+                    placeholder: "Birthday Month*"
+                },
+                {
+                    name: "birthday_day",
+                    type: "text",
+                    label: "Birthday Day",
+                    placeholder: "Birthday Day*"
+                },
+                {
+                    name: "birthday_year",
+                    type: "text",
+                    label: "Birthday Year",
+                    placeholder: "Birthday Year*"
+                },
+                {
+                    name: "ssn",
+                    type: "text",
+                    label: "Social Security Number",
+                    placeholder: "SSN"
+                },
+                {
+                    name: "upin",
+                    type: "text",
+                    label: "Unique Personal Identification Number",
+                    placeholder: "UPIN"
+                },
+                {
+                    name: "ethnicity",
+                    type: "choice",
+                    label: "Ethnicity",
+                    choices: [
+                        "Hispanic or Latino", "Not Hispanic or Latino"
+                    ]
+                },
+                {
+                    name: "race",
+                    type: "choice",
+                    label: "Race",
+                    choices: [
+                        "American Indian or Alaska Native", "Asian", "Black or African American", "Native Hawaiian or Other Pacific Islander", "White"
+                    ]
+                },
+                {
+                    name: "buyer",
+                    type: "choice",
+                    label: "Are you the actual transferee/buyer of the firearms listed?",
+                    choices: [
+                        "Yes", "No"
+                    ]
+                },
+                {
+                    name: "indictment",
+                    type: "choice",
+                    label: "Are you under the indictment or information in any court for a felony?",
+                    choices: [
+                        "Yes", "No"
+                    ]
+                },
+                {
+                    name: "felony",
+                    type: "choice",
+                    label: "Have you ever been convicted in any court of a felony?",
+                    choices: [
+                        "Yes", "No"
+                    ]
+                },
+                {
+                    name: "fugitive",
+                    type: "choice",
+                    label: "Are you a fugitive from justice?",
+                    choices: [
+                        "Yes", "No"
+                    ]
+                },
+                {
+                    name: "substance",
+                    type: "choice",
+                    label: "Are you an unlawful user of any controlled substance?",
+                    choices: [
+                        "Yes", "No"
+                    ]
+                },
+                {
+                    name: "mental",
+                    type: "choice",
+                    label: "Have you ever been adjudicated as a mental defective?",
+                    choices: [
+                        "Yes", "No"
+                    ]
+                },
+                {
+                    name: "discharged_army",
+                    type: "choice",
+                    label: "Have you been discharged from the Armed Forces under dishonorable conditions?",
+                    choices: [
+                        "Yes", "No"
+                    ]
+                },
+                {
+                    name: "restraining_order",
+                    type: "choice",
+                    label: "Are you subject to a court restraining order?",
+                    choices: [
+                        "Yes", "No"
+                    ]
+                },
+                {
+                    name: "misdemeanor",
+                    type: "choice",
+                    label: "Have you ever been convicted in any court of a misdemeanor?",
+                    choices: [
+                        "Yes", "No"
+                    ]
+                },
+                {
+                    name: "citizenship",
+                    type: "text",
+                    placeholder: "Country of Citizenship",
+                    label: "Country of Citizenship (USA or Other please specify)*",
+                    choices: [
+                        "Yes", "No"
+                    ]
+                },
+                {
+                    name: "renounced_citizenship",
+                    type: "choice",
+                    label: "Have you ever renounced your US citizenship?",
+                    choices: [
+                        "Yes", "No"
+                    ]
+                },
+                {
+                    name: "alien",
+                    type: "choice",
+                    label: "Are you an alien illegally and unlawfully in the US?",
+                    choices: [
+                        "Yes", "No"
+                    ]
+                },
+                {
+                    name: "alien_number",
+                    type: "text",
+                    placeholder: "US issued Alien or Admission Number",
+                    label: "If you are an alien, record your US issued Alien or Admission Number:"
+                },
+                {
+                    name: "signature_1",
+                    type: "choice",
+                    label: "I certify that my answers in Section A are true, correct, and complete. I have read and understand the Notices," +
+                    "Instructions, and Definitions on ATF Form 4473. I understand that answering 'yes' to previous questions if I am not the " +
+                    "actual transferee/buyer is a crime punishable as a felony under Federal law, and may also violate State and/or local law. I understand" +
+                    " that a person who answers 'yes' previous questions is prohibited from purchasing or receiving a firearm. I understand that a " +
+                    "person who answers 'yes' to previous questions is prohibited from receiving or possessing a firearm, unless the person answers 'yes' to previous questions and provides the documentation" +
+                    " required in a previous question. I also understand that making any false oral or written statement, or exhibiting any false " +
+                    "or misrepresented identification with respect to this transaction, is a crime punishable as a felony under Federal law, and " +
+                    "may also violate State and/or local law. I further understand that the repetitive purchase of firearms for the purpose of resale for livelihood" +
+                    " and profit without a Federal firearms license is a violation of Federal law. ",
+                    choices: [
+                        "Yes", "No"
+                    ]
+                }
+            ]
+        };
     }
 
     // get all data in form and return object
@@ -80,85 +335,65 @@ class ApplyForm extends React.Component {
         }
         */
 
+        this.state.questions.forEach((question) => {
+            if((question.type == "text" || question.type == "password" || question.type == "email")){
+                document.getElementById(question.name).classList.remove("uk-form-danger");
+            }
+        });
+
         document.getElementById('message_status').innerHTML = '<div id="thankyou_message" class="uk-alert-success" uk-alert=""><p>Sending ...</p></div>';
 
-        document.getElementById("email").classList.remove("uk-form-danger");
-        document.getElementById("username").classList.remove("uk-form-danger");
-        document.getElementById("password").classList.remove("uk-form-danger");
-        document.getElementById("background_check_text").classList.remove("uk-form-danger");
-
-        document.getElementById("email").classList.remove("uk-form-success");
-        document.getElementById("username").classList.remove("uk-form-success");
-        document.getElementById("password").classList.remove("uk-form-success");
-
-        if( !data.email || !data.username || !data.password || !data.background_check){
-            let prev = false;
-            let innertext = "<div id=\"invalid\" class=\"uk-alert-danger\" uk-alert=\"\"> No";
-            if(!data.email){
-                innertext += ' Email';
-                document.getElementById("email").classList.add("uk-form-danger");
+        console.log(data);
+        let prev = false;
+        let innertext = "<div id=\"invalid\" class=\"uk-alert-danger\" uk-alert=\"\"> No";
+        this.state.questions.forEach((question) => {
+            if(question.type == "text" || question.type == "password" || question.type == "email")
+            if(!document.getElementById(question.name).value){
+                if(prev) innertext += `, `;
+                innertext += ` ${question.label}`;
+                document.getElementById(question.name).classList.add("uk-form-danger");
                 prev = true;
             }
-            if(!data.username){
-                if(prev) innertext += ',';
-                document.getElementById("username").classList.add("uk-form-danger");
-                innertext += ' Username';
-                prev = true;
-            }
-            if(!data.password){
-                if(prev) innertext += ',';
-                document.getElementById("password").classList.add("uk-form-danger");
-                innertext += ' Password';
-            }
-            if(!data.background_check){
-                if(prev) innertext += ',';
-                document.getElementById("background_check_text").classList.add("uk-form-danger");
-                innertext += ' Background Check document'
-            }
-            // language=HTML
-            innertext += ' provided </div>';
-            document.getElementById("message_status").innerHTML = innertext;
+        });
+        innertext = "</div>";
+        if(prev) {
+            document.getElementById('message_status').innerHTML = innertext;
+            return false;
         }
-        else if( !ApplyForm.validEmail(data.email) ) {   // if email is not valid show error
+
+
+        if( !ApplyForm.validEmail(data.email) ) {   // if email is not valid show error
             document.getElementById('message_status').innerHTML = '<div id="invalid" class="uk-alert-danger" uk-alert="">Invalid Email</div>';
             document.getElementById("email").classList.add("uk-form-danger");
             return false;
         } else {
-            submit.append('file', this.uploadInput.files[0]);
             submit.append('username', data.username);
-            submit.append('password', data.password);
+            submit.append('passwd', data.password);
             submit.append('email', data.email);
-            document.getElementById("email").classList.add("uk-form-success");
-            document.getElementById("username").classList.add("uk-form-success");
-            document.getElementById("password").classList.add("uk-form-success");
+            submit.append("status", "yes");
             document.getElementById("submit").innerText = "Sending";
             document.getElementById("submit").setAttribute("disabled", "");
             let url = "https://athenahacksserver.azurewebsites.net/background";  // sign in
             fetch(url, {
+                headers: {  'Access-Control-Allow-Origin': 'http://localhost:3000' },
                 method: 'POST',
                 body: submit,
             }).then((response) => {
                 console.log(response);
             });
             document.getElementById('message_status').innerHTML = '<div id="thankyou_message" class="uk-alert-success" uk-alert=""><p>Message Sent! Thank you!</p></div>';
-            document.getElementById("email").classList.remove("uk-form-success");
-            document.getElementById("username").classList.remove("uk-form-success");
-            document.getElementById("password").classList.remove("uk-form-success");
             document.getElementById("submit").innerText = "Submit";
             document.getElementById("submit").removeAttribute("disabled");
-
-
             //if it doesnt work
             document.getElementById("email").value = "";
             document.getElementById("username").value = "";
             document.getElementById("password").value = "";
-            document.getElementById("background_check").value = "";
-            document.getElementById("background_check_text").value = "";
 
         }
     }
 
     render() {
+        let variables = this.state.questions;
         return (
             <div>
                 <div id="message_status">
@@ -167,28 +402,41 @@ class ApplyForm extends React.Component {
                 <div className="uk-margin-auto uk-margin-auto-vertical uk-width-1-2@s">
 
                     <form onSubmit={this.handleSubmit}>
-
+                        <input name="_key" type="hidden" value="138ejFgO6EuEQoFps0JdlA"/>
+                            <input name="_redirecturl" type="hidden" value="http://localhost:5000/"/>
                         <fieldset className="uk-fieldset">
                             <h1>Apply for a Background Check</h1>
                             {/*<legend className="uk-legend"></legend>*/}
                             {/*<p>You may use the form or email us at </p>*/}
-                            <div className="uk-margin">
-                                <input alt="username" className="uk-input uk-form-width-large" id="username" label="" required="" name="username" placeholder="Username*" title="username"/>
-                            </div>
-                            <div className="uk-margin">
-                                <input alt="email" className="uk-input uk-form-width-large" id="email" label="" required="" name="email" placeholder="Your Email*" title="email" type="email"/>
-                            </div>
-                            <div className="uk-margin">
-                                <input alt="password" className="uk-input uk-form-width-large" id="password" label="" required="" name="password" placeholder="Password*" title="password" type="password"/>
-                            </div>
-                            {/*document*/}
-                            <div className="uk-margin">
-                                <div uk-form-custom="target: true">
-                                    <input ref={(ref) => { this.uploadInput = ref; }} name="background_check" id="background_check" title="background_check" type="file"/>
-                                        <input id="background_check_text" className="uk-input uk-form-width-medium" type="text" placeholder="Select file*" disabled="" /><button className="uk-button uk-button-default" type="button" tabIndex="-1">Select</button>
-                                </div>
-                            </div>
-                            <div className="uk-margin" uk-margin="">
+
+                            {
+                                variables.map((val) => {
+                                    if (val.type === "choice") {
+                                        return <div>
+                                            <label for={val.name}>{val.label}</label>
+                                            <div className="uk-margin-small">
+                                                {
+                                                    val.choices.map((c) => (
+                                                        <label><input value={val.name} className="uk-radio" type="radio" name={val.name} title={val.name}/> {c} </label>
+                                                    ))
+                                                }
+
+                                            </div>
+                                        </div>
+                                    }
+                                    else {
+                                        return <div>
+                                            <label for={val.name}>{val.label}</label>
+                                            <div className="uk-margin-small">
+                                                <input alt={val.name} className="uk-input uk-form-width-large"
+                                                       id={val.name} label="" required="" name={val.name}
+                                                       placeholder={val.placeholder} type={val.type} title={val.name}/>
+                                            </div>
+                                        </div>
+                                    }
+                                })
+                            }
+                            <div className="uk-margin-small" uk-margin="">
                                 <button type="submit" value="Submit" id="submit" className="uk-button uk-button-default uk-first-column">Submit</button>
                             </div>
                         </fieldset>
