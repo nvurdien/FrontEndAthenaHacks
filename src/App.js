@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Home from './containers/homepage'
+import Apply from './containers/apply'
+import Contact from './containers/contact'
+import Process from './containers/process'
+import Qualification from './containers/qualification'
+import './uikit.min.css';
+import {Header} from "./components/header";
+import {OffCanvasHeader} from "./components/offCanvasHeader";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+    <Router>
+        <div>
+            <Header/>
+            <OffCanvasHeader/>
+
+            <Route exact path="/" component={Home} />
+            <Route path="/apply" component={Apply} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/qualification" component={Qualification} />
+            <Route path="/process" component={Process} />
+        </div>
+    </Router>
+);
 
 export default App;
