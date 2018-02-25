@@ -160,37 +160,40 @@ class ApplyForm extends React.Component {
 
     render() {
         return (
-            <div className="uk-margin-auto uk-margin-auto-vertical uk-width-1-2@s">
+            <div>
                 <div id="message_status">
 
                 </div>
-                <form onSubmit={this.handleSubmit}>
+                <div className="uk-margin-auto uk-margin-auto-vertical uk-width-1-2@s">
 
-                    <fieldset className="uk-fieldset">
-                        <h1>Apply for a Background Check</h1>
-                        {/*<legend className="uk-legend"></legend>*/}
-                        {/*<p>You may use the form or email us at </p>*/}
-                        <div className="uk-margin">
-                            <input alt="username" className="uk-input uk-form-width-large" id="username" label="" required="" name="username" placeholder="Username*" title="username"/>
-                        </div>
-                        <div className="uk-margin">
-                            <input alt="email" className="uk-input uk-form-width-large" id="email" label="" required="" name="email" placeholder="Your Email*" title="email" type="email"/>
-                        </div>
-                        <div className="uk-margin">
-                            <input alt="password" className="uk-input uk-form-width-large" id="password" label="" required="" name="password" placeholder="Password*" title="password" type="password"/>
-                        </div>
-                        {/*document*/}
-                        <div className="uk-margin">
-                            <div uk-form-custom="target: true">
-                                <input ref={(ref) => { this.uploadInput = ref; }} name="background_check" id="background_check" title="background_check" type="file"/>
-                                    <input id="background_check_text" className="uk-input uk-form-width-medium" type="text" placeholder="Select file*" disabled="" /><button className="uk-button uk-button-default" type="button" tabIndex="-1">Select</button>
+                    <form onSubmit={this.handleSubmit}>
+
+                        <fieldset className="uk-fieldset">
+                            <h1>Apply for a Background Check</h1>
+                            {/*<legend className="uk-legend"></legend>*/}
+                            {/*<p>You may use the form or email us at </p>*/}
+                            <div className="uk-margin">
+                                <input alt="username" className="uk-input uk-form-width-large" id="username" label="" required="" name="username" placeholder="Username*" title="username"/>
                             </div>
-                        </div>
-                        <div className="uk-margin" uk-margin="">
-                            <button type="submit" value="Submit" id="submit" className="uk-button uk-button-default uk-first-column">Submit</button>
-                        </div>
-                    </fieldset>
-                </form>
+                            <div className="uk-margin">
+                                <input alt="email" className="uk-input uk-form-width-large" id="email" label="" required="" name="email" placeholder="Your Email*" title="email" type="email"/>
+                            </div>
+                            <div className="uk-margin">
+                                <input alt="password" className="uk-input uk-form-width-large" id="password" label="" required="" name="password" placeholder="Password*" title="password" type="password"/>
+                            </div>
+                            {/*document*/}
+                            <div className="uk-margin">
+                                <div uk-form-custom="target: true">
+                                    <input ref={(ref) => { this.uploadInput = ref; }} name="background_check" id="background_check" title="background_check" type="file"/>
+                                        <input id="background_check_text" className="uk-input uk-form-width-medium" type="text" placeholder="Select file*" disabled="" /><button className="uk-button uk-button-default" type="button" tabIndex="-1">Select</button>
+                                </div>
+                            </div>
+                            <div className="uk-margin" uk-margin="">
+                                <button type="submit" value="Submit" id="submit" className="uk-button uk-button-default uk-first-column">Submit</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         );
     }
