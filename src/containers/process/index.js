@@ -3,6 +3,6 @@ import {Title} from "../../components/title";
 
 export default () => (
     <div>
-        <Title/>
+        <Title title="Process" subtext=""/>
     </div>
 )

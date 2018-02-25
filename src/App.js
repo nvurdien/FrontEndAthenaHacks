@@ -12,14 +12,15 @@ import {OffCanvasHeader} from "./components/offCanvasHeader";
 const App = () => (
     <Router>
         <div>
-            <Header/>
-            <OffCanvasHeader/>
+
 
             <Route exact={true} path={"/"} component={Home} />
             <Route exact={true} path={"/apply"} component={Apply} />
             <Route exact={true} path={"/contact"} component={Contact} />
             <Route exact={true} path={"/qualification"} component={Qualification} />
             <Route exact={true} path={"/process"} component={Process} />
+            <Header/>
+            <OffCanvasHeader/>
         </div>
     </Router>
 );

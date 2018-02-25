@@ -133,7 +133,7 @@ class ApplyForm extends React.Component {
             document.getElementById("password").classList.add("uk-form-success");
             document.getElementById("submit").innerText = "Sending";
             document.getElementById("submit").setAttribute("disabled", "");
-            let url = "http://athenahacksserver.azurewebsites.net/background";  // sign in
+            let url = "https://athenahacksserver.azurewebsites.net/background";  // sign in
             fetch(url, {
                 method: 'POST',
                 body: submit,

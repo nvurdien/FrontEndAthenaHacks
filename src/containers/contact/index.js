@@ -4,7 +4,7 @@ import {Title} from "../../components/title";
 
 export default () => (
     <div>
-        <Title/>
+        <Title title="Contact Us" subtext=""/>
         <div className="uk-section uk-section-default uk-padding-large">
             <ContactForm/>
         </div>
